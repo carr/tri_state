@@ -1,0 +1,7 @@
+= Tri State checkboxes for Rails
+Checkboxes with 3 states - on, off or null
+
+= Usage
+Need to configure the database field as :integer
+
+    f.tri_state :active
