@@ -15,34 +15,34 @@ Install the plugin:
 The database field corresponding to the tri state checkbox needs to have the data type <tt>:integer</tt>.
 
 In the <head> of your layout include:
-    <%= stylesheet_link_tag(style) %>
+    <%= stylesheet_link_tag 'tri_state' %>
     <%= javascript_include_tag 'tri_state' %>
 
 And in your views just use the following code within a <tt>form_for(..) do |f|</tt> block
     f.tri_state :active
     
 = How does it work?
-Tristate checkboxes are unobtrusive. The form helper inserts a <select> tag, so that its perfectly usable for users with
-javascript disabled.    
+Tristate checkboxes are unobtrusive. The form helper inserts a <tt><select></tt> tag, so that its perfectly usable for 
+users with javascript disabled.    
     
 = Customizing
 If you want to change the images for the checkbox, after including tristate.js include the following code:
-    <script type="text/javascript">
-        TriState.images = {
-            '1': '/images/icons/accept.png', 
-            '0': '/images/icons/cancel.png', 
-            '': '/images/icons/question_mark.png'
-        }
-    </script>
+  <script type="text/javascript">
+      TriState.images = {
+          '1': '/images/icons/accept.png', 
+          '0': '/images/icons/cancel.png', 
+          '': '/images/icons/question_mark.png'
+      }
+  </script>
     
 If you want to change the sequence for changing the state when a user clicks on a checkbox, after including tristate.js
 include the following code:
-    <script type="text/javascript">
-        TriState.transitions = {
-            "1": "0",
-            "0": "",
-            "": "1"
-        }
-    </script> 
+  <script type="text/javascript">
+      TriState.transitions = {
+          "1": "0",
+          "0": "",
+          "": "1"
+      }
+  </script> 
 
 The first member is the originating state and the second member is the new state.       
