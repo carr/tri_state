@@ -19,7 +19,7 @@ In the <head> of your layout include:
     <%= javascript_include_tag 'tri_state' %>
 
 And in your views just use the following code within a <tt>form_for(..) do |f|</tt> block
-    f.tri_state :active
+    <%= f.tri_state :active %>
     
 = How does it work?
 Tristate checkboxes are unobtrusive. The form helper inserts a <tt><select></tt> tag, so that its perfectly usable for 
@@ -45,4 +45,11 @@ include the following code:
       }
   </script> 
 
-The first member is the originating state and the second member is the new state.       
+The first member is the originating state and the second member is the new state.  
+
+= Todo
+Only form based usage works now:
+    <%= f.tri_state :active %>
+
+So normal form usage would be nice, like so:
+    <%= tri_state :post, :active %>
