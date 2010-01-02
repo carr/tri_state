@@ -5,10 +5,10 @@ This Rails plugin enables you to use checkboxes with 3 states:
  * false 
  * null
  
-= Dependencies
+== Dependencies
 The plugin is written and tested for Rails 2.3 and the Prototype javascript library.
 
-= Usage
+== Usage
 Install the plugin:
     script/plugin install git://github.com/carr/tri_state.git
 
@@ -21,11 +21,11 @@ In the <head> of your layout include:
 And in your views just use the following code within a <tt>form_for(..) do |f|</tt> block
     <%= f.tri_state :active %>
     
-= How does it work?
+== How does it work?
 Tristate checkboxes are unobtrusive. The form helper inserts a <tt><select></tt> tag, so that its perfectly usable for 
 users with javascript disabled.    
     
-= Customizing
+== Customizing
 If you want to change the images for the checkbox, after including tristate.js include the following code:
   <script type="text/javascript">
       TriState.images = {
@@ -47,7 +47,7 @@ include the following code:
 
 The first member is the originating state and the second member is the new state.  
 
-= Todo
+== TODO
 Only form based usage works now:
     <%= f.tri_state :active %>
 
