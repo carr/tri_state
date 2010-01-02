@@ -1,7 +1,48 @@
-= Tri State checkboxes for Rails
-Checkboxes with 3 states - on, off or null
+= Tri state checkboxes
+
+This Rails plugin enables you to use checkboxes with 3 states:
+ * true
+ * false 
+ * null
+ 
+= Dependencies
+The plugin is written and tested for Rails 2.3 and the Prototype javascript library.
 
 = Usage
-Need to configure the database field as :integer
+Install the plugin:
+    script/plugin install git://github.com/carr/tri_state.git
 
+The database field corresponding to the tri state checkbox needs to have the data type <tt>:integer</tt>.
+
+In the <head> of your layout include:
+    <%= stylesheet_link_tag(style) %>
+    <%= javascript_include_tag 'tri_state' %>
+
+And in your views just use the following code within a <tt>form_for(..) do |f|</tt> block
     f.tri_state :active
+    
+= How does it work?
+Tristate checkboxes are unobtrusive. The form helper inserts a <select> tag, so that its perfectly usable for users with
+javascript disabled.    
+    
+= Customizing
+If you want to change the images for the checkbox, after including tristate.js include the following code:
+    <script type="text/javascript">
+        TriState.images = {
+            '1': '/images/icons/accept.png', 
+            '0': '/images/icons/cancel.png', 
+            '': '/images/icons/question_mark.png'
+        }
+    </script>
+    
+If you want to change the sequence for changing the state when a user clicks on a checkbox, after including tristate.js
+include the following code:
+    <script type="text/javascript">
+        TriState.transitions = {
+            "1": "0",
+            "0": "",
+            "": "1"
+        }
+    </script> 
+
+The first member is the originating state and the second member is the new state.       
